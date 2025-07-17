@@ -1,0 +1,16 @@
+@media (min-width: 1200px) {
+  main.main {
+    margin-left: 300px;
+  }
+}
+
+@media (max-width: 1199px) {
+  main.main {
+    margin-left: 0;
+  }
+}
+
+main.main {
+  width: 100%;
+  display: block;
+}

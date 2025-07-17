@@ -1,0 +1,65 @@
+<!-- Portfolio Section -->
+<section id="portfolio" class="portfolio section light-background">
+
+  <!-- Section Title -->
+  <div class="container section-title" data-aos="fade-up">
+    <h2>Portfolio</h2>
+    <p>This section features selected development projects completed during my Master’s studies and professional experience. These projects demonstrate hands-on proficiency with technologies including Java, Spring Boot, Laravel, Node.js, and modern frontend frameworks. Emphasis is placed on clean architecture, scalable functionality, and maintainable code that adheres to industry standards.</p>
+  </div>
+
+  <div class="container">
+
+    <div class="isotope-layout" data-layout="masonry" data-sort="original-order">
+
+      <!-- Portfolio Items -->
+      <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
+
+        <div class="col-lg-4 col-md-6 portfolio-item isotope-item" *ngFor="let item of portfolioItems">
+          <div class="portfolio-content h-100 shadow-sm p-2 rounded-2 border bg-white">
+
+            <!-- Thumbnail image -->
+            <img [src]="item.images[0]" class="img-fluid rounded" [alt]="item.title">
+
+            <!-- Text info section below image -->
+            <div class="pt-3 px-2">
+
+              <!-- Title -->
+              <h5 class="fw-bold mb-2">{{ item.title }}</h5>
+
+              <!-- Description -->
+              <p class="mb-3 small text-muted">{{ item.description }}</p>
+
+              <div class="d-flex align-items-center flex-wrap gap-2 mt-2">
+                <!-- Lightbox Preview Button -->
+                <a *ngFor="let img of item.images"
+                   [href]="img"
+                   [attr.title]="item.title"
+                   [attr.data-gallery]="item.gallery"
+                   class="glightbox btn btn-outline-primary btn-sm"
+                   [class.d-none]="img !== item.images[0]">
+                  <i class="bi bi-zoom-in"></i> Preview
+                </a>
+
+                <!-- GitHub Buttons -->
+                <ng-container *ngFor="let link of item.githubLinks">
+                  <a [href]="link.url"
+                     target="_blank"
+                     class="btn btn-outline-dark btn-sm"
+                     [attr.title]="link.label + ' GitHub'">
+                    <i class="bi bi-github"></i> {{ link.label }}
+                  </a>
+                </ng-container>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+
+      </div><!-- End Portfolio Container -->
+
+    </div>
+
+  </div>
+
+</section><!-- /Portfolio Section -->
