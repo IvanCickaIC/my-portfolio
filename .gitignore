@@ -1,0 +1,12 @@
+# dependencies
+/node_modules
+/.angular
+
+# build output
+/dist
+/browser
+/prerendered-routes.json
+
+# misc
+.idea
+.DS_Store
